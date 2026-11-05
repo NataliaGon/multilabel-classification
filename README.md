@@ -113,6 +113,12 @@ Run the notebook’s dataset-upload cell and select the CSV. Alternatively, set 
 
 Review the data-quality audit and category counts before proceeding. The notebook excludes rows with empty descriptions or invalid or empty label lists.
 
+| Column | Required | Description |
+|---|---|---|
+| `text` | Yes | Organization description used for classification. |
+| `fields` | Yes | Assigned category names stored as a JSON or Python-style list. |
+| `website` | No | Organization URL used for duplicate and overlap checks. |
+
 ### 3. Configure the experiments
 
 Set each option in its defining configuration cell before executing dependent cells:
@@ -156,7 +162,7 @@ Duplicate records are audited rather than automatically removed from the primary
 - Select classical thresholds from out-of-fold scores, prioritizing mean fold Macro F1 and using Micro F1 to break ties.
 - Evaluate the selected configurations on the held-out test set using Macro F1, Micro F1, Samples F1, and per-category precision, recall, F1, and support.
 
-Optional methods have their own settings: the cosine-similarity threshold is selected on training scores, the encoder-based Logistic Regression and MLP use cross-validation threshold selection, and fine-tuned DistilBERT uses a fixed probability threshold of 0.50.
+Optional methods have their own settings: the cosine-similarity threshold is selected on training scores, the encoder-based Logistic Regression and MLP use cross-validation to select thresholds, and fine-tuned DistilBERT uses a fixed probability threshold of 0.50.
 
 ### LLM comparison
 
@@ -189,7 +195,7 @@ When using this code, cite the repository and identify the commit or release use
 
 > Noa Shtang *EcoHubMap Multilabel Organization Classification* [Computer software]. GitHub. https://github.com/NataliaGon/multilabel-classification. Specify the commit identifier and access date used in your work.
 
-Also cite the corresponding research article when its final bibliographic details are available. If using a separately obtained dataset, cite that dataset's own record and comply with its access and reuse terms. This repository does not provide a public download of the study corpus.
+Also cite the corresponding research article when its final bibliographic details are available. If using a separately obtained dataset, cite that dataset's own record and comply with its access and reuse terms. When using the study dataset, cite: Shtang, N. (2026). *Dataset for Multilingual Multi-Label Classification of Sustainability-Oriented Organizations* [Data set]. Zenodo. https://doi.org/10.5281/zenodo.23949354 Also cite the corresponding research article when its final bibliographic details are available.
 
 ## License
 
@@ -202,3 +208,5 @@ Dataset rights are separate from code rights. Third-party pretrained models and 
 Please use [GitHub Issues](https://github.com/NataliaGon/multilabel-classification/issues) to report bugs, discuss reproducibility questions, or propose changes. Include the relevant notebook section, dependency versions, configuration, and, where possible, a minimal synthetic example.
 
 Pull requests should explain the change and any effect on preprocessing, data splits, thresholds, or evaluation comparability. Do not include API keys, source organization texts without permission, private checkpoints, or model artifacts without appropriate rights. Clearly distinguish changes to the research protocol from reproduction of the documented experiment.
+
+Maintained by Noa Shtang. For questions, bug reports, or contribution proposals, please open a GitHub issue.
