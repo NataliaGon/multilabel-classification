@@ -10,7 +10,7 @@ The study uses website-derived organization descriptions associated with [EcoHub
 
 The dataset is openly available on [Zenodo](https://doi.org/10.5281/zenodo.23949354) under the Creative Commons Attribution 4.0 International (CC BY 4.0) license. It contains 7,347 organization records across 25 sustainability-related categories. Users may download and reuse the dataset with appropriate attribution.
 
-Download `final_data.xlsx` and export it as a CSV before uploading it to the notebook. Preserve the original row order when reproducing the study’s train/test split and evaluation subset.
+Download `data.csv` and export it as a CSV before uploading it to the notebook. Preserve the original row order when reproducing the study’s train/test split and evaluation subset.
 
 ### Category catalog
 
@@ -107,7 +107,7 @@ The notebook is designed for Colab; cloning alone does not remove its Colab depe
 
 ### 2. Prepare and load the dataset
 
-Download `final_data.xlsx` from [Zenodo](https://doi.org/10.5281/zenodo.23949354) and export it as a UTF-8 CSV, preserving the column names, cell contents, and original row order.
+Download `.xlsx` from [Zenodo](https://doi.org/10.5281/zenodo.23949354) and export it as a UTF-8 CSV, preserving the column names, cell contents, and original row order.
 
 Run the notebook’s dataset-upload cell and select the CSV. Alternatively, set `DATASET_PATH` in that cell to the location of your CSV before running it.
 
